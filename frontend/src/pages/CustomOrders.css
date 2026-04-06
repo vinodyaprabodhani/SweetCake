@@ -1,0 +1,40 @@
+/* Custom Orders Page */
+.custom-hero {
+  min-height: 40vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1400') center/cover;
+}
+.custom-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(74,44,42,0.85), rgba(74,44,42,0.6)); }
+.custom-hero-content { position: relative; z-index:2; text-align: center; padding-top: 80px; }
+.custom-hero-content h1 { font-size: var(--text-5xl); color: var(--color-white); margin-bottom: var(--space-4); }
+.custom-hero-content p { font-size: var(--text-lg); color: rgba(255,248,240,0.8); }
+
+.custom-layout {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--space-10); align-items: start;
+}
+
+.custom-info h2 { font-size: var(--text-3xl); margin-bottom: var(--space-6); color: var(--color-chocolate); }
+
+.steps-list { display: flex; flex-direction: column; gap: var(--space-5); }
+.step-item { display: flex; gap: var(--space-4); align-items: flex-start; }
+.step-number {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--gradient-rose); color: white; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-weight: 700; font-size: var(--text-lg); flex-shrink: 0;
+}
+.step-item h4 { color: var(--color-chocolate); margin-bottom: var(--space-1); }
+.step-item p { font-size: var(--text-sm); color: var(--color-gray-500); }
+
+.custom-form {
+  background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+.custom-form h3 { font-size: var(--text-2xl); color: var(--color-chocolate); margin-bottom: var(--space-6); }
+
+.success-message { text-align: center; padding: var(--space-16); }
+.success-message h2 { font-size: var(--text-4xl); color: var(--color-chocolate); margin: var(--space-4) 0; }
+.success-message p { color: var(--color-gray-500); margin-bottom: var(--space-6); max-width: 500px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 1024px) { .custom-layout { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
