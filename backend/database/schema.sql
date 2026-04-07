@@ -3,8 +3,7 @@
 -- Sri Lankan Premium Bakery E-Commerce
 -- ============================================
 
-CREATE DATABASE IF NOT EXISTS sweetcake_db;
-USE sweetcake_db;
+-- --------------------------------------------
 
 -- ============================================
 -- Users Table
