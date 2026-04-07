@@ -27,7 +27,11 @@ const CakeCard = ({ product, index = 0 }) => {
       {/* Image Container */}
       <div className="cake-card-image">
         <Link to={`/product/${product.slug}`}>
-          <img src={product.image} alt={product.name} loading="lazy" />
+          <img 
+            src={product.image.startsWith('/images/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image} 
+            alt={product.name} 
+            loading="lazy" 
+          />
           <div className="cake-card-overlay">
             <span className="view-details">View Details ✨</span>
           </div>

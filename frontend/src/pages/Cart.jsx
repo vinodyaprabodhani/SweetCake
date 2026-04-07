@@ -42,7 +42,7 @@ const Cart = () => {
                 const price = item.sale_price || item.price;
                 return (
                   <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.name} className="cart-item-img" />
+                    <img src={item.image?.startsWith('/images/') ? `${import.meta.env.BASE_URL}${item.image.slice(1)}` : item.image} alt={item.name} className="cart-item-img" />
                     <div className="cart-item-info">
                       <h3>{item.name}</h3>
                       <span className="cart-item-price">LKR {formatPrice(price)}</span>

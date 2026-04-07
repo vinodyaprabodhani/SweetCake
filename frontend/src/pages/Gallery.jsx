@@ -42,7 +42,11 @@ const Gallery = () => {
             {galleryImages.map((img, i) => (
               <div key={i} className={`gallery-item ${i % 5 === 0 ? 'tall' : ''} ${i % 7 === 0 ? 'wide' : ''}`}
                 onClick={() => setLightbox(i)}>
-                <img src={img.src} alt={img.caption} loading="lazy" />
+                <img 
+                  src={img.src.startsWith('/images/') ? `${import.meta.env.BASE_URL}${img.src.slice(1)}` : img.src} 
+                  alt={img.caption} 
+                  loading="lazy" 
+                />
                 <div className="gallery-item-overlay">
                   <span className="gallery-caption">{img.caption}</span>
                   <span className="gallery-zoom">🔍</span>
@@ -58,7 +62,13 @@ const Gallery = () => {
         <div className="lightbox" onClick={() => setLightbox(null)}>
           <button className="lightbox-close" onClick={() => setLightbox(null)}>✕</button>
           <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length); }}>‹</button>
-          <img src={galleryImages[lightbox].src.replace('w=600', 'w=1200')} alt={galleryImages[lightbox].caption} />
+          <img 
+            src={galleryImages[lightbox].src.startsWith('/images/') 
+              ? `${import.meta.env.BASE_URL}${galleryImages[lightbox].src.slice(1)}` 
+              : galleryImages[lightbox].src.replace('w=600', 'w=1200')
+            } 
+            alt={galleryImages[lightbox].caption} 
+          />
           <p className="lightbox-caption">{galleryImages[lightbox].caption}</p>
           <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); setLightbox((lightbox + 1) % galleryImages.length); }}>›</button>
         </div>

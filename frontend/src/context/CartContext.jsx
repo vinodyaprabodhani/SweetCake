@@ -51,7 +51,7 @@ export const CartProvider = ({ children }) => {
       // Enforce Account Requirement
       showToast('🔒 You must create an account to order cakes!', 'error');
       setTimeout(() => {
-        window.location.href = '/login';
+        window.location.href = `${import.meta.env.BASE_URL}login`;
       }, 1800);
       return;
     }

@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('sweetcake_token');
     localStorage.removeItem('sweetcake_user');
     setUser(null);
-    window.location.href = '/login';
+    window.location.href = `${import.meta.env.BASE_URL}login`;
   };
 
   const isAdmin = user?.role === 'admin';

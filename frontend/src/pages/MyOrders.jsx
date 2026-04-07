@@ -60,7 +60,7 @@ const MyOrders = () => {
                   <div className="order-card-items">
                     {order.items?.map((item, i) => (
                       <div key={i} className="order-item-mini">
-                        <img src={item.product_image} alt={item.product_name} />
+                        <img src={item.product_image?.startsWith('/images/') ? `${import.meta.env.BASE_URL}${item.product_image.slice(1)}` : item.product_image} alt={item.product_name} />
                         <div>
                           <span className="oi-name">{item.product_name}</span>
                           <span className="oi-qty">x{item.quantity} — LKR {formatPrice(item.total_price)}</span>

@@ -18,7 +18,7 @@ const About = () => {
         <div className="container">
           <div className="about-story-grid">
             <div className="about-story-image">
-              <img src="/images/chef-about-us.jpg" alt="Our Chef" />
+              <img src={`${import.meta.env.BASE_URL}images/chef-about-us.jpg`} alt="Our Chef" />
               <div className="about-experience-badge">
                 <span className="exp-number">8+</span>
                 <span className="exp-text">Years of Excellence</span>

@@ -82,7 +82,7 @@ const ProductDetail = () => {
             {/* Image */}
             <div className="product-image-container">
               <div className="product-main-image">
-                <img src={product.image} alt={product.name} />
+                <img src={product.image?.startsWith('/images/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image} alt={product.name} />
                 {discount > 0 && <span className="discount-badge">-{discount}%</span>}
                 {product.is_featured && <span className="featured-tag">⭐ Featured</span>}
               </div>

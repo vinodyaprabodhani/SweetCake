@@ -135,7 +135,7 @@ const Checkout = () => {
               <div className="checkout-items">
                 {items.map(item => (
                   <div key={item.id} className="checkout-item">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.image?.startsWith('/images/') ? `${import.meta.env.BASE_URL}${item.image.slice(1)}` : item.image} alt={item.name} />
                     <div className="checkout-item-info">
                       <span className="checkout-item-name">{item.name}</span>
                       <span className="checkout-item-qty">x{item.quantity}</span>
