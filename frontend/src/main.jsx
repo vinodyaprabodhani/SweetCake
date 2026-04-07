@@ -8,7 +8,7 @@ import './styles/index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/SweetCake">
+    <BrowserRouter>
       <AuthProvider>
         <CartProvider>
           <App />
