@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "npm run build && cd dist && git init && git branch -M main && git add . && git commit -m 'Deploy' && git push -f https://github.com/vinodyaprabodhani/SweetCake.git main:gh-pages"
+    "deploy": "npm run build && cd dist && git init && git branch -M main && git add . && (git commit -m 'Deploy' || true) && git push -f https://github.com/vinodyaprabodhani/SweetCake.git main:gh-pages"
   },
   "dependencies": {
     "axios": "^1.14.0",
